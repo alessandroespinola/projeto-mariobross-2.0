@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+// CORE
+@import "core/breakpoints";
+@import "core/colors";
+@import "core/typography";
+@import "core/utilities";
+
+// PARTIALS
+@import "partials/header";
+@import "partials/footer";
+
+// COMPONENTS
+@import "components/banner";
+@import "components/servicos";
+@import "components/newsletter";
+
+/* ===== Scrollbar CSS ===== */ /* Firefox */
+* {
+  scrollbar-width: 4px;
+  scrollbar-color: #70ebc6 #a6ff00;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #70ebc6;
+  border-radius: 999px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  cursor: pointer;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateY(-10px); /* Move 10 pixels para cima */
+  }
+}
+
+.w-full {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  max-width: 570px;
+
+  @include sm {
+    gap: 32px;
+  }
+
+  @include xl {
+    align-items: flex-start;
+  }
+}
+
+.mario-filme-logo {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-section {
+  margin: auto;
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  padding: 102px 32px 0 32px;
+  justify-content: center;
+
+  @include sm {
+    padding-top: 144px;
+  }
+
+  @include xl {
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 64px;
+  }
+}
+
+.text-white {
+  color: $white;
+  font-size: 18px;
+
+  @include sm {
+    font-size: 20px;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @include sm {
+    gap: 32px;
+    flex-wrap: nowrap;
+  }
+}
+
+.button {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 3px;
+  transform: skew(-10deg);
+  min-width: 200px;
+  cursor: pointer;
+
+  @include xl {
+    min-width: 240px;
+  }
+
+  &.btn-red {
+    background: $red;
+    color: $white;
+    text-decoration: none;
+    transition: 1s;
+    &:hover{
+      background: rgba(132, 27, 27, 0.961);
+    }
+  }
+
+  &.btn-green {
+    background: transparent;
+    border: $green 1px solid;
+    color: $white;
+    transition: 1s;
+    &:hover{
+      background: green;
+  
+    }
+  }
+}
+
+.mario-and-luigi {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain;
+  display: none;
+
+  @include xl {
+    display: block;
+  }
+}
+
+.center-lg-left {
+  text-align: center;
+
+  @include xl {
+    text-align: left;
+  }
+}
+
+.bg-video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  video {
+    height: 100vh;
+  }
+
+  &::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: linear-gradient(
+      109deg,
+      rgba(10, 12, 16, 0.99) 15%,
+      rgba(10, 12, 16, 0.7) 50%,
+      rgba(10, 12, 16, 0.99) 85%
+    );
+  }
+}
