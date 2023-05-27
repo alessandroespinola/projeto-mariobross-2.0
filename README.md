@@ -1,1 +1,1 @@
-<a href= "https://alessandroespinola.github.io/Projeto-vingadores/" > Projeto MarioBross. </a> 
+<a href= "https://alessandroespinola.github.io/projeto-mariobross-2.0/" target="_blank" > Projeto MarioBross. </a> 
